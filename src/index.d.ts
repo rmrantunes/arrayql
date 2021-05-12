@@ -1,3 +1,6 @@
+// export type AllKeys = { __allKeys: boolean };
+// BooleanKeys<T[P]> | AllKeys
+
 export type BooleanKeys<T> = {
   [P in keyof T]?: T[P] extends any[]
     ? QueryOptions<T[P][number]>
