@@ -1,7 +1,7 @@
 {
   "name": "arrayql",
   "version": "0.0.1",
-  "description": "",
+  "description": "Map and filter your array of objects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
