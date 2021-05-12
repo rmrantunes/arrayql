@@ -8,8 +8,16 @@
     "dev": "ts-node-dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "array",
+    "filter",
+    "map",
+    "graphql"
+  ],
+  "author": "https://github.com/rmrantunes",
+  "repository": {
+    "url": "https://github.com/rmrantunes/arrayql"
+  },
   "license": "ISC",
   "devDependencies": {
     "ts-node-dev": "^1.1.6",
