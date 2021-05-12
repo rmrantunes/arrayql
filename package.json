@@ -2,7 +2,8 @@
   "name": "arrayql",
   "version": "0.0.1",
   "description": "Map and filter your array of objects",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
     "dev": "ts-node-dev",
     "test": "echo \"Error: no test specified\" && exit 1"
