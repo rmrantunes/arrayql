@@ -1,4 +1,4 @@
-import { BooleanKeys, QueryOptions } from ".";
+import { BooleanKeys, QueryOptions } from "..";
 
 function isObject(item: any) {
   return Object.prototype.toString.call(item).includes("Object");
