@@ -22,14 +22,14 @@ function objectQL<T>(object: T, booleanKeys: BooleanKeys<T>) {
       !isSelectedPropValueArray && isObject(selectedPropValue);
     const isSelectedPropValueArrayAndItsItemsPrimitive =
       isSelectedPropValueArray && !isArrayOrObject(selectedPropValue[0]);
-    const recursiveBooleanKeys = booleanKeys[key];
+    const booleanKeysOrQueryOptions = booleanKeys[key];
 
     const value = isSelectedPropValueObject
-      ? objectQL(selectedPropValue, recursiveBooleanKeys)
+      ? objectQL(selectedPropValue, booleanKeysOrQueryOptions)
       : isSelectedPropValueArray
       ? isSelectedPropValueArrayAndItsItemsPrimitive
         ? selectedPropValue
-        : arrayQL(selectedPropValue, recursiveBooleanKeys)
+        : arrayQL(selectedPropValue, booleanKeysOrQueryOptions)
       : selectedPropValue;
 
     return { ...mappedObject, [key]: value };
