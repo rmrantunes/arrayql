@@ -1,35 +1,38 @@
 import { BooleanKeys, QueryOptions } from "../index";
 
-function isObject(item: any) {
+function isObject(item: any): boolean {
   return Object.prototype.toString.call(item).includes("Object");
 }
 
-function isArray(item: any) {
+function isArray(item: any): boolean {
   return Array.isArray(item);
 }
 
-function isNotArrayNorObject(item: any) {
-  return !isArray(item) && !isObject(item);
+function isArrayOrObject(item: any): boolean {
+  return isArray(item) || isObject(item);
 }
 
-function objectQL<T>(object: T, optionsKeysObject: BooleanKeys<T>) {
-  const queriedObjectKeys = Object.keys(optionsKeysObject);
+function objectQL<T>(object: T, booleanKeys: BooleanKeys<T>) {
+  const selectedObjectKeys = Object.keys(booleanKeys);
 
-  return queriedObjectKeys.reduce((returned, key) => {
-    const prop = object[key];
-    const isPropArray = isArray(prop);
-    const isPropObject = isObject(prop);
-    const recursiveOptionsKeysObject = { ...optionsKeysObject }[key];
+  return selectedObjectKeys.reduce((mappedObject, key) => {
+    const selectedPropValue = object[key];
+    const isSelectedPropValueArray = isArray(selectedPropValue);
+    const isSelectedPropValueObject =
+      !isSelectedPropValueArray && isObject(selectedPropValue);
+    const isSelectedPropValueArrayAndItsItemsPrimitive =
+      isSelectedPropValueArray && !isArrayOrObject(selectedPropValue[0]);
+    const recursiveBooleanKeys = booleanKeys[key];
 
-    const value = isPropObject
-      ? objectQL(prop, recursiveOptionsKeysObject)
-      : isPropArray
-      ? isNotArrayNorObject(prop[0])
-        ? prop
-        : arrayQL(prop, recursiveOptionsKeysObject)
-      : prop;
+    const value = isSelectedPropValueObject
+      ? objectQL(selectedPropValue, recursiveBooleanKeys)
+      : isSelectedPropValueArray
+      ? isSelectedPropValueArrayAndItsItemsPrimitive
+        ? selectedPropValue
+        : arrayQL(selectedPropValue, recursiveBooleanKeys)
+      : selectedPropValue;
 
-    return { ...returned, [key]: value };
+    return { ...mappedObject, [key]: value };
   }, {});
 }
 
