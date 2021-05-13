@@ -3,6 +3,7 @@
 ## Installation
 
 #### `npm i arrayql`
+
 #### `yarn add arrayql`
 
 ## Get started
@@ -49,4 +50,4 @@ Some problems are open to get a resolution:
 - [ ] Infer the types of the returned array.
 - [ ] 🤔 Build a mutation option. Am I too crazy? I mean, who's gonna use it, anyway?
 
-Let's say you want to help, one thing is important: the root `.d.ts` file has to be manually copied to `lib/` folder after TS to JS compilation with `tsc`. 🤷‍♂️ _Let's change this as well, I'm not any tsconfig.json master._ But before doing this, just `yarn` the project dependencies 😎.
+Let's say you want to help, one thing is important: the root `.d.ts` file has to be manually copied to `lib/` folder after TS to JS compilation with `tsc`. 🤷‍♂️ _Let's change this as well, I'm not any tsconfig.json master._ But before doing this, just `yarn` the project dependencies and don't forget to `test` your implementations 😎.
