@@ -1,9 +1,19 @@
 // export type AllKeys = { __allKeys: boolean };
 // BooleanKeys<T[P]> | AllKeys
 
+type PrimitiveAndFunction =
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
+  | (() => any);
+
 export type BooleanKeys<T> = {
   [P in keyof T]?: T[P] extends any[]
-    ? QueryOptions<T[P][number]>
+    ? T[P] extends PrimitiveAndFunction[]
+      ? boolean
+      : QueryOptions<T[P][number]>
     : T[P] extends Record<string, any>
     ? BooleanKeys<T[P]>
     : boolean;

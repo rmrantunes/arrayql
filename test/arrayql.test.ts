@@ -53,4 +53,23 @@ describe("arrayql queries (map, filter)", () => {
       },
     ]);
   });
+  it("should map properly arrays of primitive data and functions", () => {
+    const result = arrayQL(unorganizedData, {
+      keys: {
+        tags: true,
+        luckyNumbers: true,
+      },
+    });
+
+    expect(result).toEqual([
+      {
+        tags: ["array", "filter"],
+        luckyNumbers: [1, 2, 3, 4],
+      },
+      {
+        tags: ["array", "filter"],
+        luckyNumbers: [1, 2, 3, 4],
+      },
+    ]);
+  });
 });

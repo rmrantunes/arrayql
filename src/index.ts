@@ -1,4 +1,4 @@
-import { BooleanKeys, QueryOptions } from "..";
+import { BooleanKeys, QueryOptions } from "../index";
 
 function isObject(item: any) {
   return Object.prototype.toString.call(item).includes("Object");
@@ -6,6 +6,10 @@ function isObject(item: any) {
 
 function isArray(item: any) {
   return Array.isArray(item);
+}
+
+function isNotArrayNorObject(item: any) {
+  return !isArray(item) && !isObject(item);
 }
 
 function objectQL<T>(object: T, optionsKeysObject: BooleanKeys<T>) {
@@ -20,7 +24,9 @@ function objectQL<T>(object: T, optionsKeysObject: BooleanKeys<T>) {
     const value = isPropObject
       ? objectQL(prop, recursiveOptionsKeysObject)
       : isPropArray
-      ? arrayQL(prop, recursiveOptionsKeysObject)
+      ? isNotArrayNorObject(prop[0])
+        ? prop
+        : arrayQL(prop, recursiveOptionsKeysObject)
       : prop;
 
     return { ...returned, [key]: value };
