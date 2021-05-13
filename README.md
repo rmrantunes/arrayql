@@ -9,11 +9,11 @@
 
 ### `arrayQL(array, queryOptions)`
 
-#### array: T[]
+### array: T[]
 
 An array of objects.
 
-#### queryOptions: QueryOptions\<T\>
+### queryOptions: QueryOptions\<T\>
 
 **keys: BooleanKeys\<T\>** - selects which keys will be in the output. Must be boolean, it doesn't matter if it's true or false.
 **where?: (object: T) => boolean**: - (optional) filter callback that recieves each object and returns a boolean expression.
