@@ -44,9 +44,3 @@ export function arrayQL<T, R = any>(
 
   return returned.filter(Boolean);
 }
-
-const a = [
-  {
-    tags: ["s", "s"],
-  },
-];
