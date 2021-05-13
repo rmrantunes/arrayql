@@ -11,6 +11,7 @@ export const unorganizedData = [
       },
     },
     tags: ["array", "filter"],
+    luckyNumbers: [1, 2, 3, 4],
     friends: [
       {
         name: "jamelin",
@@ -30,6 +31,7 @@ export const unorganizedData = [
       },
     },
     tags: ["array", "filter"],
+    luckyNumbers: [1, 2, 3, 4],
     friends: [
       {
         name: "jamelão",
