@@ -37,10 +37,11 @@ export function arrayQL<T, R = any>(
   array: T[],
   queryOptions: QueryOptions<T>
 ): R[] {
-  const returned = array.map((object) => {
-    queryOptions.where ??= () => true;
-    return queryOptions.where(object) && objectQL(object, queryOptions.keys);
-  });
-
-  return returned.filter(Boolean);
+  queryOptions.where ??= () => true;
+  const mappedArray = [];
+  for (const object of array) {
+    if (!queryOptions.where(object)) continue;
+    mappedArray.push(objectQL(object, queryOptions.keys));
+  }
+  return mappedArray;
 }
