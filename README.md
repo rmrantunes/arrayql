@@ -17,6 +17,7 @@ An array of objects.
 ### queryOptions: QueryOptions\<T\>
 
 **keys: BooleanKeys\<T\>** - selects which keys will be in the output. They must be boolean, it doesn't matter if they're true or false.
+
 **where?: (object: T) => boolean**: - (optional) filter callback that recieves each object and returns a boolean expression.
 
 Considering GraphQL queries features, `arrayQL` is recursive, which means that you can have objects and arrays nested and it'll work for them as well. In below example, `friends` is also an array of objects. _Attention_: array of primitive values, like `keywords` which is an array of strings, must be selected as boolean, not as QueryOptions.
