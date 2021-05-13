@@ -2,8 +2,8 @@
 
 ## Installation
 
-`npm i arrayql`
-`yarn add arrayql`
+#### `npm i arrayql`
+#### `yarn add arrayql`
 
 ## Get started
 
