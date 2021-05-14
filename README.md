@@ -42,6 +42,20 @@ const normalizedUsers = arrayQL(users, {
 });
 ```
 
+#### With ES6
+
+You can obtain the same result with usual .map() and .filter(). But it is a bit more complex, especially when things get nested 😅.
+
+```js
+const withES6 = users
+  .filter(({ age }) => age > 23)
+  .map(({ name, address: { city, country }, id, friends }) => ({
+    name,
+    address: { city, country }
+    friends: friends.map(({ id }) => ({ id })),
+  }));
+```
+
 Now you know how to start, just go and query your arrays 😃.
 
 ## Contribute
