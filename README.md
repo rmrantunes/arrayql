@@ -69,7 +69,7 @@ You are able to share your ideas or propose changes/features.
 Some problems are open to get a resolution:
 
 - [ ] Infer the types of the returned array.
-- [ ] Check input errors (object | array invalid structure).
+- [ ] Check input errors (invalid object | array structure).
 - [ ] 🤔 Build a mutation option. Am I too crazy? I mean, who's gonna use it, anyway?
 
 Let's say you want to help, one thing is important: the root `index.d.ts` file has to be manually copied to `lib/` folder after TS to JS compilation with `tsc`. 🤷‍♂️ _Let's change this as well, I'm not any tsconfig.json master._ But before doing this, just `yarn` the project dependencies and don't forget to `test` your implementations 😎.
