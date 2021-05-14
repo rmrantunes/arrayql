@@ -2,9 +2,9 @@
 
 ## Installation
 
-#### `npm i arrayql`
+#### `npm i arrayql-js`
 
-#### `yarn add arrayql`
+#### `yarn add arrayql-js`
 
 ## Get started
 
@@ -23,7 +23,7 @@ An array of objects.
 Considering GraphQL queries features, `arrayQL` is recursive, which means that you can have objects and arrays nested and it'll work for them as well. In below example, `friends` is also an array of objects. _Attention_: array of primitive values, like `keywords` which is an array of strings, must be selected as boolean, not as QueryOptions.
 
 ```js
-import { arrayQL } from "arrayql";
+import { arrayQL } from "arrayql-js";
 
 const normalizedUsers = arrayQL(users, {
   keys: {
