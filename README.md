@@ -70,7 +70,7 @@ Now you know how to start, just go and query your arrays 😃.
 You are able to share your ideas or propose changes/features.
 Some problems are open to get a resolution:
 
-- [ ] Infer the types of the returned array.
+- [ ] Infer the types of the returned array, if possible, of course.
 - [ ] Check input errors (invalid object | array structure).
 - [ ] 🤔 Build a mutation option. Am I too crazy? I mean, who's gonna use it, anyway?
 
