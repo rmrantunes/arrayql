@@ -42,7 +42,7 @@ const normalizedUsers = arrayQL(users, {
 });
 ```
 
-#### With ES6
+### With ES6
 
 You can obtain the same result with usual .map() and .filter(). But it is a bit more complex, especially when things get nested 😅.
 
