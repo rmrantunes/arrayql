@@ -1,5 +1,5 @@
 {
-  "name": "arrayql",
+  "name": "arrayql-js",
   "version": "1.1.0",
   "description": "Map and filter your array of objects",
   "main": "lib/index.js",
