@@ -43,6 +43,8 @@ const normalizedUsers = arrayQL(users, {
 });
 ```
 
+Don't worry, `arrayQL` has a nice type definition, it will infer the shape of your object, then your editor will do the rest.
+
 ### With ES6
 
 You can obtain the same result with usual .map() and .filter(). But it is a bit more complex, especially when things get nested 😅.
