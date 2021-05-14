@@ -35,6 +35,7 @@ const normalizedUsers = arrayQL(users, {
       country: true,
     },
     friends: {
+      where: ({ name }) => name.includes("Smith"),
       keys: { id: true },
     },
   },
@@ -54,9 +55,10 @@ const withES6 = users
     id,
     keywords,
     address: { city, country },
-    friends: friends.map(({ id }) => ({ id })),
+    friends: friends
+      .filter(({ name }) => name.includes("Smith"))
+      .map(({ id }) => ({ id })),
   }));
-
 ```
 
 Now you know how to start, just go and query your arrays 😃.
