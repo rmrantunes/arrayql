@@ -49,11 +49,14 @@ You can obtain the same result with usual .map() and .filter(). But it is a bit 
 ```js
 const withES6 = users
   .filter(({ age }) => age > 23)
-  .map(({ name, address: { city, country }, id, friends }) => ({
+  .map(({ name, id, keywords, address: { city, country }, friends }) => ({
     name,
-    address: { city, country }
+    id,
+    keywords,
+    address: { city, country },
     friends: friends.map(({ id }) => ({ id })),
   }));
+
 ```
 
 Now you know how to start, just go and query your arrays 😃.
