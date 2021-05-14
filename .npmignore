@@ -2,3 +2,4 @@ test/
 src/
 jest.config.js
 tsconfig.json
+test.ts
