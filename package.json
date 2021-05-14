@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "dev": "ts-node-dev",
@@ -19,7 +19,7 @@
   ],
   "author": "https://github.com/rmrantunes",
   "repository": {
-    "url": "https://github.com/rmrantunes/arrayql"
+    "url": "git://github.com/rmrantunes/arrayql.git"
   },
   "license": "ISC",
   "devDependencies": {
