@@ -4,13 +4,6 @@
   "description": "Map and filter your array of objects",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "scripts": {
-    "dev": "ts-node-dev",
-    "test": "jest"
-  },
   "keywords": [
     "array",
     "filter",
@@ -21,6 +14,10 @@
   "repository": {
     "url": "git://github.com/rmrantunes/arrayql.git"
   },
+  "scripts": {
+    "dev": "ts-node-dev",
+    "test": "jest"
+  },
   "license": "ISC",
   "devDependencies": {
     "ts-node-dev": "^1.1.6",
@@ -28,6 +25,5 @@
     "@types/jest": "^26.0.23",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.6"
-  },
-  "dependencies": {}
+  }
 }
