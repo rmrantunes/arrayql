@@ -16,6 +16,7 @@ export const unorganizedData = [
       {
         name: "jamelin",
         id: 1,
+        age: 20,
       },
     ],
   },
@@ -36,10 +37,12 @@ export const unorganizedData = [
       {
         name: "jamelão",
         id: 1,
+        age: 30,
       },
       {
         name: "rafael",
         id: 9,
+        age: 29,
       },
     ],
   },
