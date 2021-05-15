@@ -38,13 +38,17 @@ function objectQL<T>(object: T, booleanKeys: BooleanKeys<T>) {
 
 export function arrayQL<T, R = any>(
   array: T[],
-  queryOptions: QueryOptions<T>
+  queryOptions: QueryOptions<T> | ((object: T) => QueryOptions<T>)
 ): R[] {
-  queryOptions.where ??= () => true;
   const mappedArray = [];
+
   for (const object of array) {
-    if (!queryOptions.where(object)) continue;
-    mappedArray.push(objectQL(object, queryOptions.keys));
+    const options =
+      typeof queryOptions === "function" ? queryOptions(object) : queryOptions;
+
+    options.where ??= () => true;
+    if (!options.where(object)) continue;
+    mappedArray.push(objectQL(object, options.keys));
   }
   return mappedArray;
 }

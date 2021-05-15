@@ -26,5 +26,5 @@ export interface QueryOptions<T> {
 
 export function arrayQL<T, R = any>(
   array: T[],
-  queryOptions: QueryOptions<T>
+  queryOptions: QueryOptions<T> | ((object: T) => QueryOptions<T>)
 ): R[];
