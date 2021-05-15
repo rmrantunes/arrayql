@@ -45,7 +45,6 @@ export function arrayQL<T, R = any>(
   for (const object of array) {
     const options =
       typeof queryOptions === "function" ? queryOptions(object) : queryOptions;
-
     options.where ??= () => true;
     if (!options.where(object)) continue;
     mappedArray.push(objectQL(object, options.keys));
