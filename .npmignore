@@ -3,4 +3,4 @@ src/
 jest.config.js
 tsconfig.json
 test.ts
-index.d.ts
+./index.d.ts
