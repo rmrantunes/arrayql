@@ -6,6 +6,10 @@
 
 #### `yarn add arrayql-js`
 
+## See an example on CodeSandbox
+
+[CodeSandbox Example](https://codesandbox.io/s/arrayql-js-from-npm-4lslo)
+
 ## Get started
 
 ### `arrayQL(array, queryOptions)`
